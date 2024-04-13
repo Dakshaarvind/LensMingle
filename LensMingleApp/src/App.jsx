@@ -3,13 +3,11 @@
 import React from 'react';
 import ProfilePage from './components/ProfilePage';
 import ResultsPage from './components/ResultsPage';
-
+import FilterPage from './components/FilterPage';
 
 const App = () => {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <FilterPage/>
   );
 };
 
