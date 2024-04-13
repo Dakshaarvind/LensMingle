@@ -16,12 +16,12 @@ const ResultsPage = () => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: '#9F7AEA', padding: '450px' }}>
       <h2>Results</h2>
       <div className="profiles">
         {profiles.map((profile, index) => (
           <div key={index} className="profile">
-            <img src={profile.picture} alt={profile.name} />
+            <img src={profile.picture} alt={profile.name} style={{width: '190px', height: '190px' }} />
             <h3>{profile.name}</h3>
             <p>{generateAbbreviation(profile.description)}</p>
           </div>
