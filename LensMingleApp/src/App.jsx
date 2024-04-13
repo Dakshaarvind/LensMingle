@@ -7,7 +7,7 @@ import FilterPage from './components/FilterPage';
 
 const App = () => {
   return (
-    <FilterPage/>
+    <ResultsPage/>
   );
 };
 

@@ -16,14 +16,14 @@ const ResultsPage = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#9F7AEA', padding: '450px' }}>
-      <h2>Results</h2>
-      <div className="profiles">
+    <div className="bg-purple-200 p-8">
+      <h2 className="text-2xl font-bold mb-4">Results</h2>
+      <div className="grid grid-cols-2 gap-4">
         {profiles.map((profile, index) => (
-          <div key={index} className="profile">
-            <img src={profile.picture} alt={profile.name} style={{width: '190px', height: '190px' }} />
-            <h3>{profile.name}</h3>
-            <p>{generateAbbreviation(profile.description)}</p>
+          <div key={index} className="bg-white rounded-lg p-4 shadow-md">
+            <img src={profile.picture} alt={profile.name} className="w-48 h-48 mx-auto mb-4 rounded-full" />
+            <h3 className="text-lg font-semibold">{profile.name}</h3>
+            <p className="text-gray-600">{generateAbbreviation(profile.description)}</p>
           </div>
         ))}
       </div>
@@ -32,3 +32,4 @@ const ResultsPage = () => {
 };
 
 export default ResultsPage;
+
