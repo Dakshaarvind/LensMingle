@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ProfilePage from './components/ProfilePage';
+import ResultsPage from './components/ResultsPage';
 
 
 const App = () => {
