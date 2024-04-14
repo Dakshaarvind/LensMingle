@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Signup from './Signup'; // Import the Signup component
+import FilterPage from './FilterPage'; // Import the FilterPage component
 
 const Login = () => {
   const [showSignup, setShowSignup] = useState(false); // State to manage whether to show the signup form
@@ -26,7 +27,7 @@ const Login = () => {
   };
 
   if (isLoggedIn) {
-    return <div>Welcome! You are logged in.</div>; // Render a welcome message if the user is logged in
+    return <FilterPage />; // Render the FilterPage if the user is logged in
   }
 
   if (showSignup) {
