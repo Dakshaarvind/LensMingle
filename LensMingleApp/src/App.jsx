@@ -8,7 +8,7 @@ import LastPage from './components/LastPage';
 
 const App = () => {
   return (
-    <LastPage/>
+    <ResultsPage/>
   );
 };
 

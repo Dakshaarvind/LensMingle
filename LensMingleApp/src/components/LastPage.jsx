@@ -20,6 +20,7 @@ function LastPage() {
           <img src="ai.jpeg" alt="Photo 1" className="w-48 h-48 rounded-md object-cover m-2" />
           <img src="boy.jpg" alt="Photo 2" className="w-48 h-48 rounded-md object-cover m-2" />
           <img src="girl.jpg" alt="Photo 3" className="w-48 h-48 rounded-md object-cover m-2" />
+          <img src="OIP.jpg" alt="Photo 4" className="w-48 h-48 rounded-md object-cover m-2" />
         </div>
       </div>
       <div className="videos mb-8">
