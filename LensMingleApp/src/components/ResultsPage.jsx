@@ -9,6 +9,12 @@ const ResultsPage = ({ data }) => {
     setExpandedProfile(expandedProfile === index ? null : index);
   };
 
+  // Function to handle "View Work" button click
+  const handleViewWork = () => {
+    console.log("View Work clicked");
+    // Add logic to navigate to another page or perform another action
+  };
+
   return (
     <div className="bg-purple-200 p-8">
       <h2 className="text-2xl font-bold mb-4">Find your photographer!</h2>
@@ -20,6 +26,7 @@ const ResultsPage = ({ data }) => {
             </button>
             <h3 className="text-lg font-semibold">{profile.name}</h3>
             <p className="text-gray-600 font-bold">Price: {profile.price}</p>
+            <button onClick={handleViewWork} className="bg-blue-500 text-white px-4 py-2 rounded-md">View Work</button>
             {/* Show full description if the profile is expanded */}
             {expandedProfile === index && (
               <p className="text-gray-600">{profile.description}</p>
