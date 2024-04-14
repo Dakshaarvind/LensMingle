@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import LastPage from './LastPage'; // Import the component you want to render
 
 const ResultsPage = ({ data }) => {
   // State variable to keep track of expanded profiles
   const [expandedProfile, setExpandedProfile] = useState(null);
+  
+  // State variable to determine if the LastPage component should be rendered
+  const [viewWorkClicked, setViewWorkClicked] = useState(false);
 
   // Function to handle profile expansion
   const handleProfileExpansion = (index) => {
@@ -11,10 +15,15 @@ const ResultsPage = ({ data }) => {
 
   // Function to handle "View Work" button click
   const handleViewWork = () => {
-    console.log("View Work clicked");
-    // Add logic to navigate to another page or perform another action
+    setViewWorkClicked(true); // Set the state to true when the button is clicked
   };
 
+  // If the "View Work" button was clicked, render the LastPage component
+  if (viewWorkClicked) {
+    return <LastPage />;
+  }
+
+  // Otherwise, render the ResultsPage component
   return (
     <div className="bg-purple-200 p-8">
       <h2 className="text-2xl font-bold mb-4">Find your photographer!</h2>

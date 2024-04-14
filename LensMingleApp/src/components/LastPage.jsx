@@ -15,10 +15,10 @@ function LastPage() {
         <p>Address: 554 Clark Ave, Los Angeles, USA</p>
       </div>
       <div className="photos mb-8">
-        <h3 className="text-lg font-semibold mb-2">Photos</h3>
+        <h3 className="text-lg font-semibold mb-2 bg-white bg-opacity-30 rounded-lg inline-block p-2">Photos</h3>
         <div className="flex flex-wrap justify-center">
           <img src="Kim1.jpg" alt="Photo 1" className="w-1/3 h-48 rounded-md object-cover m-2 border-2 border-white" />
-          <img src="Kim2.jpg" alt="Photo 2" className="w-1/3 h-48 rounded-md object-cover m-2 border-2 border-white" />
+          <img src="wedding.jpeg" alt="Photo 2" className="w-1/3 h-48 rounded-md object-cover m-2 border-2 border-white" />
           <img src="Kim3.jpg" alt="Photo 3" className="w-1/3 h-48 rounded-md object-cover m-2 border-2 border-white" />
           <img src="Kim4.jpg" alt="Photo 4" className="w-1/3 h-48 rounded-md object-cover m-2 border-2 border-white" />
           <img src="Kim5.jpg" alt="Photo 5" className="w-1/3 h-48 rounded-md object-cover m-2 border-2 border-white" />
@@ -26,7 +26,7 @@ function LastPage() {
         </div>
       </div>
       <div className="videos mb-8">
-        <h3 className="text-lg font-semibold mb-2">Videos</h3>
+        <h3 className="text-lg font-semibold mb-2 bg-white bg-opacity-30 rounded-lg inline-block p-2">Videos</h3>
         <div className="flex justify-center">
           <video controls width="160" height="120" className="m-2 border-2 border-white rounded">
             <source src="vid1.mp4" type="video/mp4" />

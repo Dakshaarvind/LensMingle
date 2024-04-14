@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div>
       
-      <LastPage />
+      <Login />
     </div>
   );
 };
