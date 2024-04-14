@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import ResultsPage from './ResultsPage';
 
 const FilterPage = () => {
   const [category, setCategory] = useState('');
   const [religion, setReligion] = useState('');
   const [keyword, setKeyword] = useState('');
-  const [minPrice, setMinPrice] = useState(''); // Add this line
-  const [maxPrice, setMaxPrice] = useState(''); // Add this line
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
   const [data, setData] = useState([]);
+  const [showResults, setShowResults] = useState(false); // State to toggle showing results
+  const [filteredData, setFilteredData] = useState([]); // State to store filtered data
 
   useEffect(() => {
     // Fetch JSON data from the public folder
@@ -27,19 +30,32 @@ const FilterPage = () => {
   const handleSubmit = () => {
     // Filter the data based on the selected category, religion, keyword, and price range
     const filteredData = data.filter(item => {
-      const categoryMatch = !category || item.category === category;
-      const religionMatch = !religion || item.religion === religion;
-      const keywordMatch = !keyword || 
-        item.keyword.toLowerCase().includes(keyword.toLowerCase()) ||
-        item.description.toLowerCase().includes(keyword.toLowerCase());
-      const priceMatch = (!minPrice || item.price >= minPrice) && (!maxPrice || item.price <= maxPrice);
+      const priceMatch = (!minPrice || parseInt(item.price.slice(1)) >= parseInt(minPrice)) && (!maxPrice || parseInt(item.price.slice(1)) <= parseInt(maxPrice));
+      
+      // Return false if priceMatch is false, regardless of other conditions
+      if (!priceMatch) {
+        console.log("Price does not match:", item.name);
+        return false;
+      }
+      
+      console.log("Category:", category);
+      console.log("Religion:", religion);
+      console.log("Keyword:", keyword);
+
+      const categoryMatch = !category || (item.description && item.description.toLowerCase().includes(category.toLowerCase()));
+      const religionMatch = !religion || (item.description && item.description.toLowerCase().includes(religion.toLowerCase()));
+      const keywordMatch = !keyword || (item.description && item.description.toLowerCase().includes(keyword.toLowerCase()));
   
-      // Return true if at least one condition matches
-      return categoryMatch || religionMatch || keywordMatch || priceMatch;
+      // Return true if priceMatch is true, or any other condition is true
+      return categoryMatch || religionMatch || keywordMatch;
     });
   
     console.log(filteredData);
-  };
+    setFilteredData(filteredData); // Store filtered data
+    setShowResults(true); // Show results after submitting
+};
+
+  
 
   return (
     <div className="w-screen h-screen">
@@ -112,24 +128,13 @@ const FilterPage = () => {
           Submit
         </button>
       </div>
-  
-      {/* New fancy landing page section (without images) */}
-      <div className="flex flex-col justify-center items-center mt-12">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
-          Find the perfect image for your project
-        </h2>
-        <p className="text-xl text-gray-600 text-center px-16">
-          Our extensive library offers a wide variety of high-quality images to suit any need.
-        </p>
-        <div className="grid grid-cols-2 gap-4 mt-8">
-          <div className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
-            {/* Placeholder for image 1 */}
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
-            {/* Placeholder for image 2 */}
-          </div>
+
+      {/* Render ResultsPage if showResults is true */}
+      {showResults && (
+        <div className="mt-8">
+          <ResultsPage data={filteredData} />
         </div>
-      </div>
+      )}
     </div>
   );
 };
