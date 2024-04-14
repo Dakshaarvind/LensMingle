@@ -58,9 +58,9 @@ const FilterPage = () => {
   
 
   return (
-    <div className="w-screen h-screen">
-      <div className="relative bg-gradient-to-r from-white to-purple-500 p-6 rounded-lg shadow-md">
-        <h1 className="text-4xl font-extrabold mb-6 text-yellow"> Welcome! What are you looking for?</h1>
+    <div className="w-screen h-screen bg-gradient-to-r from-pink-200 via-purple-300 to-indigo-400 flex items-center justify-center">
+      <div className="relative bg-white bg-opacity-50 p-6 rounded-xl shadow-lg">
+        <h1 className="text-4xl font-extrabold mb-6 text-indigo-500"> Welcome! What are you looking for?</h1>
         <div className="flex space-x-4">
           <div className="flex items-center">
             <label className="w-24">Category:</label>
@@ -71,8 +71,11 @@ const FilterPage = () => {
             >
               <option value="">Select</option>
               <option value="portrait">Portrait</option>
-              <option value="landscape">Landscape</option>
               <option value="wedding">Wedding</option>
+              <option value="Birthday Party"> Birthday Party</option>
+              <option value="National Party Congress of the CCP"> Conferences </option>
+              <option value="Graduation Pics"> Graduation </option>
+              <option value="Grand Openings"> Grand Openings </option> 
             </select>
           </div>
           {category === 'wedding' && (
