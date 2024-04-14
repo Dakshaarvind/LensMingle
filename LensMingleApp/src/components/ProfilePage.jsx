@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory from React Router
 
 const ProfilePage = () => {
     const [signupUsername, setSignupUsername] = useState('');
@@ -6,6 +7,7 @@ const ProfilePage = () => {
     const [signinUsername, setSigninUsername] = useState('');
     const [signinPassword, setSigninPassword] = useState('');
     const [error, setError] = useState('');
+    const history = useHistory(); // Get the history object from React Router
 
     const handleSignUp = () => {
         if (!signupUsername || !signupPassword) {
@@ -21,8 +23,10 @@ const ProfilePage = () => {
             setError('Please enter a username and password for sign in.');
             return;
         }
-        // Handle sign in logic here
-        console.log('Signing in:', signinUsername, signinPassword);
+        // Assume sign-in verification logic here
+        // If sign-in is successful, redirect to FilterPage
+        // For demonstration purposes, directly redirecting to FilterPage
+        history.push('/filter');
     };
 
     return (
