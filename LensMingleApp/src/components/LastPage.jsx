@@ -2,7 +2,7 @@ import React from 'react';
 
 function LastPage() {
   return (
-    <div className="container mx-auto p-8 bg-gradient-to-b from-fuchsia-600 to-blue-300 rounded shadow-lg">
+    <div className="bg-gradient-to-b from-fuchsia-600 to-blue-300 rounded shadow-lg">
       <div className="profile text-center mb-8">
         <img src="kim.png" alt="Profile Picture" className="w-32 h-32 rounded-full mx-auto mb-4" />
         <h2 className="text-xl font-bold">Kim Bradley</h2>
@@ -16,13 +16,13 @@ function LastPage() {
       </div>
       <div className="photos mb-8">
         <h3 className="text-lg font-semibold mb-2">Photos</h3>
-        <div className="flex justify-center">
-          <img src="Kim1.jpg" alt="Photo 1" className="w-48 h-48 rounded-md object-cover m-2" />
-          <img src="Kim2.jpg" alt="Photo 2" className="w-48 h-48 rounded-md object-cover m-2" />
-          <img src="Kim3.jpg" alt="Photo 3" className="w-48 h-48 rounded-md object-cover m-2" />
-          <img src="Kim4.jpg" alt="Photo 4" className="w-48 h-48 rounded-md object-cover m-2" />
-          <img src="Kim5.jpg" alt="Photo 5" className="w-48 h-48 rounded-md object-cover m-2" />
-          <img src="Kim6.jpg" alt="Photo 4" className="w-48 h-48 rounded-md object-cover m-2" />
+        <div className="flex flex-wrap justify-center">
+          <img src="Kim1.jpg" alt="Photo 1" className="w-1/3 h-48 rounded-md object-cover m-2" />
+          <img src="Kim2.jpg" alt="Photo 2" className="w-1/3 h-48 rounded-md object-cover m-2" />
+          <img src="Kim3.jpg" alt="Photo 3" className="w-1/3 h-48 rounded-md object-cover m-2" />
+          <img src="Kim4.jpg" alt="Photo 4" className="w-1/3 h-48 rounded-md object-cover m-2" />
+          <img src="Kim5.jpg" alt="Photo 5" className="w-1/3 h-48 rounded-md object-cover m-2" />
+          <img src="Kim6.jpg" alt="Photo 4" className="w-1/3 h-48 rounded-md object-cover m-2" />
         </div>
       </div>
       <div className="videos mb-8">
